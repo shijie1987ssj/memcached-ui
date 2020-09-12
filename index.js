@@ -29,9 +29,9 @@ function handleRequest(request, response){
     memcached.items(function( err, result ){
 		if( err ) console.error( err );
 		
-		console.log( JSON.stringify ( result ));
+		console.log( JSON.stringify ( result , null, 4));
 		memcached.end(); // as we are 100% certain we are not going to use the connection again, we are going to end it
-		response.end(JSON.stringify ( result ));
+		response.end(JSON.stringify ( result, null, 4 ));
 	})
 }
 
